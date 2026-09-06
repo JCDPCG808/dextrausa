@@ -26,37 +26,74 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     header .logo { font-size: 1.5rem; font-weight: 700; }
     header .logo span { color: var(--accent); }
-    nav a { color: white; text-decoration: none; margin-left: 1.5rem; }
+    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-size: 0.95rem; }
+    nav a:hover { color: var(--accent); }
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600') center/cover;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600') center/cover;
       color: white;
       text-align: center;
-      padding: 6rem 2rem;
+      padding: 5rem 1.5rem 6rem;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; }
+    .hero .tag {
+      display: inline-block;
+      background: rgba(76,175,80,0.2);
+      border: 1px solid var(--accent);
+      color: #c8e6c9;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 1rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .hero p { font-size: 1.15rem; max-width: 680px; margin: 0 auto 2rem; opacity: 0.95; }
     .btn {
       display: inline-block;
       background: var(--accent);
       color: white;
-      padding: 0.8rem 2rem;
+      padding: 0.85rem 2.2rem;
       border-radius: 4px;
       text-decoration: none;
       font-weight: 600;
+      transition: background 0.2s;
     }
     .btn:hover { background: var(--green); }
-    section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      margin-left: 0.5rem;
+    }
+    .btn-outline:hover { background: white; color: var(--dark); }
+    section { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+    section h2 { text-align: center; margin-bottom: 2.5rem; font-size: 1.8rem; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
     .feature { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .feature h3 { color: var(--green); margin-bottom: 0.5rem; }
-    .stats { display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; background: var(--green); color: white; padding: 3rem 2rem; }
-    .stat { margin: 1rem; }
+    .feature h3 { color: var(--green); margin-bottom: 0.5rem; font-size: 1.15rem; }
+    .stats { display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; background: var(--green); color: white; padding: 3rem 1.5rem; }
+    .stat { margin: 1rem; min-width: 140px; }
     .stat .num { font-size: 2.5rem; font-weight: 700; }
-    footer { background: var(--dark); color: white; text-align: center; padding: 2rem; }
-    footer a { color: var(--accent); }
+    .stat .lbl { font-size: 0.9rem; opacity: 0.9; }
+    .cta-band {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+    }
+    .cta-band h2 { margin-bottom: 1rem; }
+    .cta-band p { max-width: 600px; margin: 0 auto 2rem; opacity: 0.9; }
+    .cta-band .btn { background: var(--accent); }
+    footer { background: #111; color: #aaa; text-align: center; padding: 2rem 1.5rem; font-size: 0.9rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 600px) {
+      nav a { margin-left: 1rem; font-size: 0.85rem; }
+      .hero { padding: 4rem 1rem 5rem; }
+    }
   </style>
 </head>
 <body>
@@ -65,18 +102,21 @@
     <nav>
       <a href="#why">Why GFRP</a>
       <a href="#products">Products</a>
+      <a href="#savings">Savings</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <div class="hero">
+    <span class="tag">Hawaii-Exclusive Distribution</span>
     <h1>Rebar that never rusts. Built for Hawaii.</h1>
-    <p>Hawaii-exclusive distribution of Dextra GFRP rebar. Corrosion-free, four times lighter than steel, and engineered for salt air — so your infrastructure lasts the life of the structure.</p>
-    <a href="#contact" class="btn">Request a Spec Sheet</a>
+    <p>Steel corrodes in our salt air, spalls, and gets replaced in 25 years. GFRP doesn't corrode — it lasts the life of the structure, cuts labor, and saves taxpayers money on every bridge, road, and building we put in the ground.</p>
+    <a href="#contact" class="btn">Request Spec Sheet</a>
+    <a href="#flipbook" class="btn btn-outline">Read the Flipbook</a>
   </div>
 
   <section id="why">
-    <h2 style="text-align:center; margin-bottom:2rem;">Why switch from steel?</h2>
+    <h2>Why switch from steel?</h2>
     <div class="features">
       <div class="feature">
         <h3>Zero Corrosion</h3>
@@ -98,14 +138,14 @@
   </section>
 
   <div class="stats">
-    <div class="stat"><div class="num">4x</div><div>Lighter than steel</div></div>
-    <div class="stat"><div class="num">0</div><div>Corrosion</div></div>
-    <div class="stat"><div class="num">2</div><div>ICC-ES listings</div></div>
-    <div class="stat"><div class="num">60-70%</div><div>Less CO2 than steel</div></div>
+    <div class="stat"><div class="num">4x</div><div class="lbl">Lighter than steel</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">Corrosion</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">ICC-ES listings</div></div>
+    <div class="stat"><div class="num">60-70%</div><div class="lbl">Less CO2 than steel</div></div>
   </div>
 
   <section id="products">
-    <h2 style="text-align:center; margin-bottom:2rem;">Our Products</h2>
+    <h2>Our Products</h2>
     <div class="features">
       <div class="feature">
         <h3>Durabar</h3>
@@ -122,12 +162,36 @@
     </div>
   </section>
 
-  <section id="contact" style="text-align:center;">
-    <h2 style="margin-bottom:1rem;">Ready to build it right?</h2>
-    <p style="margin-bottom:2rem;">Tell us about your project. We'll send a one-page estimate and spec sheet.</p>
-    <a href="mailto:jamesdang@pctradingllc.com?subject=Dextra%20GFRP%20enquiry" class="btn">Email Us</a>
-    <p style="margin-top:2rem; font-size:0.9rem; color:#666;">Paradise City Industrial · 2020 Auiki St, Honolulu, HI 96819</p>
+  <section id="savings">
+    <h2>Save taxpayer money</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Stop the replacement cycle</h3>
+        <p>Steel-reinforced decks fail and get replaced. GFRP-reinforced structures don't. One pour, decades of service.</p>
+      </div>
+      <div class="feature">
+        <h3>Faster installs</h3>
+        <p>A quarter of the weight means crews place it quicker and skip coating steps — lower labor on every job.</p>
+      </div>
+      <div class="feature">
+        <h3>Modernize the spec</h3>
+        <p>Most specs still default to steel because that's what engineers were taught. Switching early wins the jobs where corrosion is the real risk.</p>
+      </div>
+    </div>
   </section>
+
+  <section id="flipbook" style="text-align:center;">
+    <h2>Engineer's Flipbook</h2>
+    <p style="max-width:600px; margin:0 auto 2rem;">Full technical breakdown, certifications, and lifecycle comparison — built for engineers and spec writers.</p>
+    <a href="#contact" class="btn">Get the Flipbook Link</a>
+  </section>
+
+  <div class="cta-band" id="contact">
+    <h2>Ready to build it right?</h2>
+    <p>Tell us about your project. We'll send a one-page estimate, spec sheet, and the flipbook.</p>
+    <a href="mailto:jamesdang@pctradingllc.com?subject=Dextra%20GFRP%20enquiry" class="btn">Email Us</a>
+    <p style="margin-top:2rem; font-size:0.9rem; opacity:0.7;">Paradise City Industrial · 2020 Auiki St, Honolulu, HI 96819 · (808) 312-4895</p>
+  </div>
 
   <footer>
     <p>&copy; 2026 Dextra USA · Hawaii-exclusive GFRP distribution</p>
