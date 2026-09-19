@@ -1,0 +1,1 @@
+import{t as e}from"./site-shell-8i1IQ4V2.js";import{n as t,s as n}from"./index-XigbTJPi.js";var r=n();function i(){return(0,r.jsx)(e,{children:(0,r.jsx)(t,{})})}export{i as component};
