@@ -1,0 +1,1 @@
+import{t as e}from"./site-shell-C9f65_-g.js";import{n as t,s as n}from"./index-BqKkYwg_.js";var r=n();function i(){return(0,r.jsx)(e,{children:(0,r.jsx)(t,{})})}export{i as component};

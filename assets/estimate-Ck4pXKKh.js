@@ -1,1 +1,0 @@
-import{t as e}from"./site-shell-Dbep-1dU.js";import{n as t,s as n}from"./index-BEiGcXcX.js";var r=n();function i(){return(0,r.jsx)(e,{children:(0,r.jsx)(t,{})})}export{i as component};
