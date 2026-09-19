@@ -1,3 +1,3 @@
-# DextraUSA
+# dextrausa.com
 
-Public site for https://dextrausa.com — U.S. representative for Dextra GFRP.
+Static Cloudflare Pages site for DextraUSA.

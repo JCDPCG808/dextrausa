@@ -1,2 +1,5 @@
 /calculator /calculator/index.html 200
 /spec /spec/index.html 200
+/estimate /estimate/index.html 200
+/estimate/privacy /estimate/privacy/index.html 200
+/takeoff /estimate 301
